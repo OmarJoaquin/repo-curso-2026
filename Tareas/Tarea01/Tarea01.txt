@@ -1,0 +1,457 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\WINDOWS\System32> sl ..
+PS C:\WINDOWS> sl ..
+PS C:\> sl users
+PS C:\users> sl Omar
+PS C:\users\Omar> sl desktop
+PS C:\users\Omar\desktop> pwd
+
+Path
+----
+C:\users\Omar\desktop
+
+
+PS C:\users\Omar\desktop> sl ..
+PS C:\users\Omar> pwd
+
+Path
+----
+C:\users\Omar
+
+
+PS C:\users\Omar> sl desktop
+PS C:\users\Omar\desktop> pwd
+
+Path
+----
+C:\users\Omar\desktop
+
+
+PS C:\users\Omar\desktop> mkdir tutorial
+
+
+    Directorio: C:\users\Omar\desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:06                tutorial
+
+
+PS C:\users\Omar\desktop> cd tutorial
+PS C:\users\Omar\desktop\tutorial> pwd
+
+Path
+----
+C:\users\Omar\desktop\tutorial
+
+PS C:\users\Omar\desktop\tutorial> mkdir dir1, dir2, dir3
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+
+
+PS C:\users\Omar\desktop\tutorial> mkdir --parents, --verbose
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+
+
+    Directorio: C:\users\Omar\desktop\tutorial\
+
+
+PS C:\users\Omar\desktop\tutorial> mkdir -pv dir4/dir5
+
+cmdlet mkdir en la posición 1 de la canalización de comandos
+Proporcione valores para los parámetros siguientes:
+Path[0]: dir4
+Path[1]: dir5
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:16                dir4
+d-----         30/8/2026     19:16                dir5
+
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+
+
+PS C:\users\Omar\desktop\tutorial> ni output.txt
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         30/8/2026     19:18              0 output.txt
+
+
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:18              0 output.txt
+
+
+PS C:\users\Omar\desktop\tutorial> ls > output.txt
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:19           2544 output.txt
+
+
+PS C:\users\Omar\desktop\tutorial> cat output.txt
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:19              0 output.txt
+
+
+PS C:\users\Omar\desktop\tutorial> echo "esto es un texto" > texto01.txt
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+
+
+PS C:\users\Omar\desktop\tutorial> echo "segundo texto" > texto02.txt
+PS C:\users\Omar\desktop\tutorial> echo "tercer texto" > texto03.txt
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> cat texto01.txt, texto02.txt, texto03.txt
+esto es un texto
+segundo texto
+tercer texto
+PS C:\users\Omar\desktop\tutorial> cat text*
+esto es un texto
+segundo texto
+tercer texto
+PS C:\users\Omar\desktop\tutorial> cat t* > combined.txt
+PS C:\users\Omar\desktop\tutorial> cat combined.txt
+esto es un texto
+segundo texto
+tercer texto
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:11                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:26             96 combined.txt
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> mv combined.txt dir1
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> ls dir1
+
+
+    Directorio: C:\users\Omar\desktop\tutorial\dir1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         30/8/2026     19:26             96 combined.txt
+
+
+PS C:\users\Omar\desktop\tutorial> cd dir1
+PS C:\users\Omar\desktop\tutorial\dir1> mv combined.txt ..
+PS C:\users\Omar\desktop\tutorial\dir1> ls ..
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:26             96 combined.txt
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial\dir1> sl ..
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:26             96 combined.txt
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> mv combined.txt, test* > dir3, dir2
+En línea: 1 Carácter: 30
++ mv combined.txt, test* > dir3, dir2
++                              ~
+Falta un argumento en la lista de parámetros.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\users\Omar\desktop\tutorial> mv combined.txt test* dir3 dir2
+Move-Item : No se encuentra ningún parámetro de posición que acepte el argumento 'dir3'.
+En línea: 1 Carácter: 1
++ mv combined.txt test* dir3 dir2
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:26             96 combined.txt
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> mv combined.txt dir3, dir2
+Move-Item : No se puede convertir 'System.Object[]' al tipo 'System.String' requerido por el parámetro 'Destination'.
+El método especificado no es compatible.
+En línea: 1 Carácter: 17
++ mv combined.txt dir3, dir2
++                 ~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgument,Microsoft.PowerShell.Commands.MoveItemCommand
+
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+d-----         30/8/2026     19:11                dir3
+d-----         30/8/2026     19:14                dir4
+d-----         30/8/2026     19:16                dir5
+-a----         30/8/2026     19:26             96 combined.txt
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> rm dir5
+PS C:\users\Omar\desktop\tutorial> rm dir3, dir4
+
+Confirmar
+El elemento situado en C:\users\Omar\desktop\tutorial\dir4 tiene elementos secundarios y no se especificó el parámetro
+ Recurse. Si continúa, se quitarán todos los secundarios junto con el elemento. ¿Está seguro de que desea continuar?
+[S] Sí  [O] Sí a todo  [N] No  [T] No a todo  [U] Suspender  [?] Ayuda (el valor predeterminado es "S"): s
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+-a----         30/8/2026     19:26             96 combined.txt
+-a----         30/8/2026     19:19           2544 output.txt
+-a----         30/8/2026     19:23             38 texto01.txt
+-a----         30/8/2026     19:23             32 texto02.txt
+-a----         30/8/2026     19:23             30 texto03.txt
+
+
+PS C:\users\Omar\desktop\tutorial> rm combined.txt, output.txt, texto01.txt, texto02.txt, texto03.txt
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+d-----         30/8/2026     19:28                dir1
+d-----         30/8/2026     19:11                dir2
+
+
+PS C:\users\Omar\desktop\tutorial> rm d*
+PS C:\users\Omar\desktop\tutorial> gci
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+
+
+PS C:\users\Omar\desktop\tutorial>
