@@ -454,4 +454,137 @@ d-----         30/8/2026     19:14                --parents
 d-----         30/8/2026     19:14                --verbose
 
 
+PS C:\users\Omar\desktop\tutorial> ls combined.txt
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         31/8/2026     18:59           1334 combined.txt
+
+
+PS C:\users\Omar\desktop\tutorial> ls -l combined.txt
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         31/8/2026     18:59           1334 combined.txt
+
+
+PS C:\users\Omar\desktop\tutorial> ls
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+-a----         31/8/2026     19:00           1334 combined.txt
+
+
+PS C:\users\Omar\desktop\tutorial> ni file_list
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         31/8/2026     19:03              0 file_list
+
+
+PS C:\users\Omar\desktop\tutorial> ls
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+-a----         31/8/2026     19:00           1334 combined.txt
+-a----         31/8/2026     19:03              0 file_list
+
+
+PS C:\users\Omar\desktop\tutorial> rm file_list
+PS C:\users\Omar\desktop\tutorial> ls
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+-a----         31/8/2026     19:00           1334 combined.txt
+
+
+PS C:\users\Omar\desktop\tutorial> ni file_list.txt
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         31/8/2026     19:04              0 file_list.txt
+
+
+PS C:\users\Omar\desktop\tutorial> write "first text" > file_list.txt
+PS C:\users\Omar\desktop\tutorial> ls
+
+
+    Directorio: C:\users\Omar\desktop\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         30/8/2026     19:14                --parents
+d-----         30/8/2026     19:14                --verbose
+-a----         31/8/2026     19:00           1334 combined.txt
+-a----         31/8/2026     19:05             26 file_list.txt
+
+
+
+PS C:\users\Omar\desktop\tutorial> gc combined.txt, file_list.txt
+primer texto
+segundo texto
+tercer texto
+first text
+second text
+third text
+PS C:\users\Omar\desktop\tutorial> gc *.txt
+primer texto
+segundo texto
+tercer texto
+first text
+second text
+third text
+
+PS C:\users\Omar\desktop\tutorial> sls "text" *.txt
+
+combined.txt:1:primer texto
+combined.txt:2:segundo texto
+combined.txt:3:tercer texto
+file_list.txt:1:first text
+file_list.txt:2:second text
+file_list.txt:3:third text
+
+
+PS C:\users\Omar\desktop\tutorial> sls "texto" *.txt
+
+combined.txt:1:primer texto
+combined.txt:2:segundo texto
+combined.txt:3:tercer texto
+
+
 PS C:\users\Omar\desktop\tutorial>
